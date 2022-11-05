@@ -1,6 +1,8 @@
 package com.simplebank.compose.di
 
 import dagger.MapKey
+import kotlin.reflect.KClass
 
 @MapKey
-annotation class ViewModelKey()
+@Target(AnnotationTarget.FUNCTION)
+annotation class ViewModelKey(val value: KClass<out ViewModelKey>)
